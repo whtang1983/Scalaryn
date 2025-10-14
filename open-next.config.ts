@@ -1,16 +1,14 @@
-// open-next.config.ts
-export default {
+// Re-export JS in the exact shape the CLI wants
+const cfg = {
   override: {
-    // Runtime wrapper for Cloudflare-style workers (what Webflow Cloud uses)
     wrapper: "cloudflare-node",
-    // Convert Next APIs to Edge-compatible handlers
     converter: "edge",
-    // How external requests are proxied
     proxyExternalRequest: "fetch",
-    // Use built-in no-op caches unless you wire up KV/R2/etc.
     incrementalCache: "dummy",
     tagCache: "dummy",
-    // Queue strategy (no queue infra by default)
     queue: "direct",
   },
-} as const;
+};
+
+// Default export must be an object with a `default` key
+export default { default: cfg };
