@@ -2,11 +2,14 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter, usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,16 +31,40 @@ export default function Header() {
     e.preventDefault();
     setIsMobileMenuOpen(false);
     
-    const element = document.querySelector(href);
-    if (element) {
-      const offset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
+    // Check if we're on the home page
+    const isHomePage = pathname === '/';
+    
+    if (isHomePage) {
+      // If on home page, just scroll to anchor
+      const element = document.querySelector(href);
+      if (element) {
+        const offset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    } else {
+      // If on another page, navigate to home page with hash
+      router.push('/' + href);
+      
+      // After navigation, scroll to the element
+      setTimeout(() => {
+        const element = document.querySelector(href);
+        if (element) {
+          const offset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
     }
   };
 
@@ -64,7 +91,7 @@ export default function Header() {
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleMenuClick(e, item.href)}
-                className="text-gray-300 hover:text-white transition-colors duration-300 text-sm font-medium"
+                className="text-gray-300 hover:text-white transition-colors duration-300 text-sm font-medium cursor-pointer"
               >
                 {item.label}
               </a>
@@ -93,7 +120,7 @@ export default function Header() {
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleMenuClick(e, item.href)}
-                className="block text-gray-300 hover:text-white transition-colors duration-300 text-sm font-medium"
+                className="block text-gray-300 hover:text-white transition-colors duration-300 text-sm font-medium cursor-pointer"
               >
                 {item.label}
               </a>

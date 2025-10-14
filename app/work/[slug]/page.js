@@ -3,10 +3,11 @@
 import { motion } from 'framer-motion';
 import { ArrowLeft, Calendar, Users, Wrench } from 'lucide-react';
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 
 export default function WorkDetail() {
   const params = useParams();
+  const router = useRouter();
   
   // Project data - in a real app, this would come from a CMS or API
   const projects = {
@@ -90,16 +91,13 @@ export default function WorkDetail() {
     <div className="min-h-screen pt-20">
       {/* Back Button */}
       <div className="container mx-auto px-6 py-8">
-        <Link href="/#services">
-          <motion.button
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="flex items-center text-gray-400 hover:text-white transition-colors"
-          >
-            <ArrowLeft className="mr-2" size={20} />
-            Back to Home
-          </motion.button>
-        </Link>
+        <button
+          onClick={() => router.push('/')}
+          className="flex items-center text-gray-400 hover:text-white transition-colors cursor-pointer"
+        >
+          <ArrowLeft className="mr-2" size={20} />
+          Back to Home
+        </button>
       </div>
 
       {/* Hero Section */}
@@ -244,7 +242,10 @@ export default function WorkDetail() {
           <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
             Let's discuss how we can help you achieve similar results with the right systems.
           </p>
-          <button className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-8 py-4 rounded-full hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300">
+          <button 
+            onClick={() => router.push('/')}
+            className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-8 py-4 rounded-full hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300"
+          >
             Start Your Project
           </button>
         </motion.div>

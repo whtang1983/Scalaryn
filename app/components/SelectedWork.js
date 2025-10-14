@@ -9,28 +9,28 @@ export default function SelectedWork() {
       id: 'salesforce-crm',
       title: 'Salesforce CRM Implementation',
       category: 'Sales System',
-      image: '/images/work1.jpg',
+      image: null, // /images/work1.jpg
       gradient: 'from-blue-500 to-cyan-500',
     },
     {
       id: 'hubspot-marketing',
       title: 'HubSpot Marketing Automation',
       category: 'Marketing System',
-      image: '/images/work2.jpg',
+      image: null,
       gradient: 'from-purple-500 to-pink-500',
     },
     {
       id: 'asana-workflow',
       title: 'Asana Project Workflow',
       category: 'Project Management',
-      image: '/images/work3.jpg',
+      image: null,
       gradient: 'from-orange-500 to-red-500',
     },
     {
       id: 'quickbooks-integration',
       title: 'QuickBooks Financial Suite',
       category: 'Finance System',
-      image: '/images/work4.jpg',
+      image: null,
       gradient: 'from-green-500 to-emerald-500',
     },
   ];

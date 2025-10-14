@@ -11,6 +11,9 @@ export default function About() {
     { icon: Star, value: '4.9', label: 'Trustpilot Rating' },
   ];
 
+  // Add your image path here, or set to null for default gradient box
+  const aboutImage = null; // Change to '/images/about-team.jpg' to use an image
+
   return (
     <section id="about" className="relative py-12">
       <div className="container mx-auto px-6">
@@ -23,10 +26,20 @@ export default function About() {
             className="relative"
           >
             <div className="relative aspect-square rounded-3xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/30 to-purple-600/30"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-4/5 h-4/5 bg-gradient-to-br from-indigo-400 to-purple-600 rounded-2xl opacity-60"></div>
-              </div>
+              {aboutImage ? (
+                <img 
+                  src={aboutImage} 
+                  alt="About Scalaryn"
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <>
+                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/30 to-purple-600/30"></div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-4/5 h-4/5 bg-gradient-to-br from-indigo-400 to-purple-600 rounded-2xl opacity-60"></div>
+                  </div>
+                </>
+              )}
             </div>
             
             <motion.div

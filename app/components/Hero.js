@@ -4,6 +4,9 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 export default function Hero() {
+  // Add your image path here, or set to null for default gradient box
+  const heroImage = null; // Change to '/images/hero-image.jpg' to use an image
+
   return (
     <section className="relative flex items-center justify-center overflow-hidden pt-32 pb-8">
       {/* Animated Background */}
@@ -62,10 +65,20 @@ export default function Hero() {
             className="relative"
           >
             <div className="relative aspect-square rounded-3xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-purple-600/20 backdrop-blur-sm"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-3/4 h-3/4 bg-gradient-to-br from-indigo-400 to-purple-600 rounded-2xl opacity-50"></div>
-              </div>
+              {heroImage ? (
+                <img 
+                  src={heroImage} 
+                  alt="Hero"
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <>
+                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-purple-600/20 backdrop-blur-sm"></div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-3/4 h-3/4 bg-gradient-to-br from-indigo-400 to-purple-600 rounded-2xl opacity-50"></div>
+                  </div>
+                </>
+              )}
             </div>
             
             {/* Floating Elements */}
