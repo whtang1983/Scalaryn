@@ -1,4 +1,4 @@
-// Make both CJS and ESM-style exports available
+// open-next.config.js
 const config = {};
-module.exports = config;
-module.exports.default = config;
+module.exports = config;        // CJS
+module.exports.default = config; // ESM interop
