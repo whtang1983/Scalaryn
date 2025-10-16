@@ -1,7 +1,0 @@
-{
-  "cosmic": {
-    "framework": "nextjs",
-    "buildCommand": "npm run build",
-    "outputDirectory": ".open-next"
-  }
-}
