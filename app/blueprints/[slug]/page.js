@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, Clock, Zap, Puzzle, Play, CheckCircle } from 'lucide-react';
 import { useParams, useRouter } from 'next/navigation';
 
-export default function BlueprintDetail() {
+const BlueprintDetail = () => {
   const params = useParams();
   const router = useRouter();
   
@@ -13,7 +13,7 @@ export default function BlueprintDetail() {
       title: 'Automated Lead → Proposal Flow',
       category: 'Sales System',
       gradient: 'from-blue-500 to-cyan-500',
-      demoVideo: 'https://www.loom.com/embed/your-video-id', // Replace with actual Loom URL
+      demoVideo: 'https://www.loom.com/embed/your-video-id',
       tagline: 'Turn incoming leads into branded proposals in minutes, not hours.',
       
       whatItDoes: [
@@ -346,19 +346,25 @@ export default function BlueprintDetail() {
           className="glass p-12 rounded-3xl text-center"
         >
           <h2 className="text-4xl font-bold text-white mb-6">
-            Want This System for Your Business?
+            Ready to Build Something Similar?
           </h2>
           <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-            We'll customize this blueprint to fit your exact workflow and tools. Book a free consultation to discuss your needs.
+            These blueprints show what's possible. We'll work with your existing tech stack and processes to achieve similar results tailored to your business.
           </p>
           <button 
-            onClick={() => router.push('/#contact')}
+            onClick={() => {
+              if (window.Calendly) {
+                window.Calendly.initPopupWidget({ url: 'https://calendly.com/benjamin-tang-scalaryn/30min' });
+              }
+            }}
             className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-8 py-4 rounded-full hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300 font-medium"
           >
-            Schedule Free Consultation
+            Schedule Free Discovery Call
           </button>
         </motion.div>
       </section>
     </div>
   );
-}
+};
+
+export default BlueprintDetail;

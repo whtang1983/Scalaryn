@@ -19,7 +19,7 @@ export default function CalendlyBadge() {
       if (window.Calendly) {
         window.Calendly.initBadgeWidget({ 
           url: 'https://calendly.com/benjamin-tang-scalaryn/30min', 
-          text: 'Schedule time with me', 
+          text: 'Book a Free Discovery Call', 
           color: '#6366f1', 
           textColor: '#ffffff', 
           branding: false 

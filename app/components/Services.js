@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { TrendingUp, Megaphone, FolderKanban, DollarSign } from 'lucide-react';
+import { TrendingUp, Megaphone, FolderKanban, DollarSign, Check, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Services() {
   const services = [
@@ -11,7 +12,14 @@ export default function Services() {
       description:
         'Book more qualified demos and close faster. Automate prospecting enrichment, instant lead routing, proposal + invoice flows, and follow-ups fully synced to your CRM.',
       gradient: 'from-blue-500 to-cyan-500',
-      previewImage: null, // sales-preview.jpg - e.g. pipeline view / proposal flow
+      features: [
+        'Lead enrichment & scoring',
+        'Automated proposal generation',
+        'CRM sync & pipeline tracking',
+        'Follow-up sequences',
+      ],
+      blueprintId: 'lead-to-proposal',
+      blueprintTitle: 'Lead → Proposal Flow',
     },
     {
       icon: Megaphone,
@@ -19,7 +27,14 @@ export default function Services() {
       description:
         'Personalized outreach at scale. AI-written icebreakers, multi-channel campaigns, tracking & attribution, and dashboards that show which campaigns print revenue.',
       gradient: 'from-purple-500 to-pink-500',
-      previewImage: null, // marketing-preview.jpg - e.g. outreach sequence / UTM report
+      features: [
+        'AI-powered personalization',
+        'Multi-channel campaign automation',
+        'Attribution & ROI tracking',
+        'Lead nurturing workflows',
+      ],
+      blueprintId: 'ai-outreach-engine',
+      blueprintTitle: 'AI Outreach Engine',
     },
     {
       icon: FolderKanban,
@@ -27,7 +42,14 @@ export default function Services() {
       description:
         'Zero-chaos delivery. Intake → scoped tasks, SLAs, client portals, automated status updates, and clean handoffs so projects ship on time without heroics.',
       gradient: 'from-orange-500 to-red-500',
-      previewImage: null, // project-preview.jpg - e.g. kanban + client portal mock
+      features: [
+        'Automated project setup',
+        'Client portals & status updates',
+        'Task automation & SLA tracking',
+        'Team collaboration workflows',
+      ],
+      blueprintId: 'client-onboarding-automation',
+      blueprintTitle: 'Client Onboarding',
     },
     {
       icon: DollarSign,
@@ -35,7 +57,14 @@ export default function Services() {
       description:
         'Cash in faster. Click-to-sign proposals trigger auto-invoice & payment, dunning & reminders, expense sync, and MRR/COGS dashboards for better decisions.',
       gradient: 'from-green-500 to-emerald-500',
-      previewImage: null, // finance-preview.jpg - e.g. Stripe/PandaDoc → dashboard
+      features: [
+        'Automated invoicing & payment',
+        'Payment reminders & tracking',
+        'Expense management sync',
+        'Financial dashboards & reporting',
+      ],
+      blueprintId: 'auto-invoice-payment',
+      blueprintTitle: 'Invoice & Payment',
     },
   ];
 
@@ -73,21 +102,13 @@ export default function Services() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group relative"
             >
-              <div className="glass p-8 rounded-2xl hover:bg-white/10 transition-all duration-300 h-full">
+              <div className="glass p-8 rounded-2xl h-full flex flex-col">
                 {/* Icon and Title Row */}
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-16 h-16 rounded-xl flex-shrink-0 overflow-hidden group-hover:scale-110 transition-transform duration-300">
-                    {service.image ? (
-                      <img 
-                        src={service.image} 
-                        alt={service.title}
-                        className="w-full h-full object-cover"
-                      />
-                    ) : (
-                      <div className={`w-full h-full bg-gradient-to-br ${service.gradient} flex items-center justify-center`}>
-                        <service.icon className="text-white" size={32} />
-                      </div>
-                    )}
+                  <div className="w-16 h-16 rounded-xl flex-shrink-0 overflow-hidden">
+                    <div className={`w-full h-full bg-gradient-to-br ${service.gradient} flex items-center justify-center`}>
+                      <service.icon className="text-white" size={32} />
+                    </div>
                   </div>
                   <h3 className="text-2xl font-bold text-white">
                     {service.title}
@@ -98,25 +119,26 @@ export default function Services() {
                   {service.description}
                 </p>
 
-                {/* Preview Image or Gradient Box */}
-                {service.previewImage ? (
-                  <div className="relative aspect-video rounded-lg overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity duration-300">
-                    <img 
-                      src={service.previewImage} 
-                      alt={`${service.title} preview`}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                ) : (
-                  <div className="relative aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 opacity-50 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-20`}></div>
-                  </div>
-                )}
+                {/* Features List */}
+                <div className="space-y-3 mb-6">
+                  {service.features.map((feature, idx) => (
+                    <div key={idx} className="flex items-start gap-3">
+                      <Check className="text-indigo-400 flex-shrink-0 mt-0.5" size={20} />
+                      <span className="text-gray-300">{feature}</span>
+                    </div>
+                  ))}
+                </div>
 
-                <div className="mt-6">
-                  <span className="text-indigo-400 font-semibold group-hover:text-indigo-300 transition-colors inline-flex items-center">
-                    Learn more →
-                  </span>
+                {/* Blueprint Link */}
+                <div className="mt-auto pt-4 border-t border-white/10">
+                  <Link href={`/blueprints/${service.blueprintId}`}>
+                    <div className="flex items-center justify-between text-indigo-400 hover:text-indigo-300 transition-colors group/link">
+                      <span className="font-medium">
+                        See example: {service.blueprintTitle}
+                      </span>
+                      <ArrowRight className="group-hover/link:translate-x-1 transition-transform" size={20} />
+                    </div>
+                  </Link>
                 </div>
               </div>
             </motion.div>
