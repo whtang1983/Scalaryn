@@ -7,6 +7,28 @@ export default function Hero() {
   // Add your image path here, or set to null for default gradient box
   const heroImage = null; // Change to '/images/hero-image.jpg' to use an image
 
+  const openCalendly = () => {
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: 'https://calendly.com/benjamin-tang-scalaryn/30min'
+      });
+    }
+  };
+
+  const scrollToServices = (e) => {
+    e.preventDefault();
+    const element = document.querySelector('#services');
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <section className="relative flex items-center justify-center overflow-hidden pt-32 pb-8">
       {/* Animated Background */}
@@ -34,24 +56,34 @@ export default function Hero() {
               </span>
             </motion.div>
             
+            {/* Headline */}
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Bring your vision to life with{' '}
+              Turn more clicks into customers with{' '}
               <span className="bg-gradient-to-r from-indigo-400 to-purple-600 bg-clip-text text-transparent">
-                modern & innovative
-              </span>{' '}
-              touch.
+                AI-powered systems
+              </span>.
             </h1>
             
+            {/* Subhead */}
             <p className="text-xl text-gray-300 mb-8 max-w-2xl">
-              Transform your business operations with powerful systems for sales, marketing, project management, and finance.
+              We build front-end revenue systems—lead gen, follow-ups, proposals, onboarding, and ops—so growth speeds up while manual work goes down.
             </p>
 
+            {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="group bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-8 py-4 rounded-full hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300 flex items-center justify-center">
-                Get Started Free
+              <button 
+                onClick={openCalendly}
+                className="group bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-8 py-4 rounded-full hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300 flex items-center justify-center" 
+                aria-label="Book a free discovery call"
+              >
+                Book a Free Discovery Call
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
               </button>
-              <button className="glass text-white px-8 py-4 rounded-full hover:bg-white/10 transition-all duration-300">
+              <button 
+                onClick={scrollToServices}
+                className="glass text-white px-8 py-4 rounded-full hover:bg-white/10 transition-all duration-300" 
+                aria-label="View services"
+              >
                 View Services
               </button>
             </div>

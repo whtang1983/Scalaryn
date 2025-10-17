@@ -8,30 +8,34 @@ export default function Services() {
     {
       icon: TrendingUp,
       title: 'Sales Systems',
-      description: 'Optimize your sales pipeline with automated CRM solutions, lead tracking, and conversion optimization systems that drive revenue growth.',
+      description:
+        'Book more qualified demos and close faster. Automate prospecting enrichment, instant lead routing, proposal + invoice flows, and follow-ups fully synced to your CRM.',
       gradient: 'from-blue-500 to-cyan-500',
-      previewImage: null, // Add preview image path here eg /images/sales-preview.jpg'
+      previewImage: null, // sales-preview.jpg - e.g. pipeline view / proposal flow
     },
     {
       icon: Megaphone,
       title: 'Marketing Systems',
-      description: 'Amplify your brand with integrated marketing automation, campaign management, and analytics platforms that deliver measurable results.',
+      description:
+        'Personalized outreach at scale. AI-written icebreakers, multi-channel campaigns, tracking & attribution, and dashboards that show which campaigns print revenue.',
       gradient: 'from-purple-500 to-pink-500',
-      previewImage: null, // Add preview image path here
+      previewImage: null, // marketing-preview.jpg - e.g. outreach sequence / UTM report
     },
     {
       icon: FolderKanban,
       title: 'Project Management',
-      description: 'Streamline operations with powerful project tracking, team collaboration tools, and workflow automation that keep projects on track.',
+      description:
+        'Zero-chaos delivery. Intake → scoped tasks, SLAs, client portals, automated status updates, and clean handoffs so projects ship on time without heroics.',
       gradient: 'from-orange-500 to-red-500',
-      previewImage: null, // Add preview image path here
+      previewImage: null, // project-preview.jpg - e.g. kanban + client portal mock
     },
     {
       icon: DollarSign,
       title: 'Finance Systems',
-      description: 'Take control of your finances with automated invoicing, expense tracking, and financial reporting systems for better decision making.',
+      description:
+        'Cash in faster. Click-to-sign proposals trigger auto-invoice & payment, dunning & reminders, expense sync, and MRR/COGS dashboards for better decisions.',
       gradient: 'from-green-500 to-emerald-500',
-      previewImage: null, // Add preview image path here
+      previewImage: null, // finance-preview.jpg - e.g. Stripe/PandaDoc → dashboard
     },
   ];
 

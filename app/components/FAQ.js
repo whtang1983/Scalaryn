@@ -7,32 +7,58 @@ import { Plus, Minus } from 'lucide-react';
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
-  const faqs = [
-    {
-      question: "Why wouldn't I just hire a full-time specialist?",
-      answer: "Hiring a full-time specialist means significant overhead costs including salary, benefits, training, and equipment. Our service provides you with an entire team of experts at a fraction of the cost, with the flexibility to scale up or down based on your needs. You get enterprise-level expertise without the enterprise-level expense.",
-    },
-    {
-      question: "Is there a limit to how many requests I can have?",
-      answer: "No limits! Once subscribed, you can add as many system implementation requests to your queue as you'd like. We'll work through them one by one, ensuring each receives the attention and quality it deserves. This gives you the flexibility to tackle multiple business challenges without worrying about additional costs.",
-    },
-    {
-      question: "How does the process work?",
-      answer: "Our process is simple and transparent. After your free consultation, we'll provide a detailed proposal. Once approved, we kick off with a planning session, then move into implementation phases with regular check-ins. You'll have full visibility throughout, with access to project dashboards and direct communication with your team.",
-    },
-    {
-      question: "What if I'm not satisfied with the service?",
-      answer: "Your satisfaction is our priority. We offer unlimited revisions on all deliverables to ensure everything meets your expectations. If you're ever unhappy, we'll work with you to make it right. Our goal is a long-term partnership, not just a one-time project.",
-    },
-    {
-      question: "How long does a typical project take?",
-      answer: "Project timelines vary based on complexity and scope. Simple system implementations might take 2-4 weeks, while comprehensive multi-system integrations could take 2-3 months. During your consultation, we'll provide a detailed timeline specific to your needs.",
-    },
-    {
-      question: "Do you provide training and ongoing support?",
-      answer: "Absolutely! We provide comprehensive training for your team on all implemented systems, including documentation and video tutorials. Post-launch, we offer ongoing support packages to ensure your systems continue running smoothly and evolve with your business needs.",
-    },
-  ];
+const faqs = [
+  {
+    question: "How fast will I see a return?",
+    answer:
+      "Within 2–4 weeks. Our first automations usually reclaim 5–10 hours/week and shorten deal cycles by 30%+. Real metrics, not guesses.",
+  },
+  {
+    question: "What does working with you look like?",
+    answer:
+      "Simple: Discovery → Blueprint → Build → Optimize. You approve one combined proposal + agreement + invoice. We build, test, and track ROI in dashboards you can see live.",
+  },
+  {
+    question: "Why not just hire a developer or VA?",
+    answer:
+      "Hiring = salary + training + management + risk. Scalaryn gives you a senior automation partner who delivers measurable impact in weeks, not months—and you pay only for outcomes.",
+  },
+  {
+    question: "What kind of ROI do clients get?",
+    answer:
+      "Typical pilots pay for themselves in 30 days—automated follow-ups lift close rates 10–20%, instant invoicing improves cash flow 25%, and time-saved compounds monthly.",
+  },
+  {
+    question: "Do you force us to switch tools?",
+    answer:
+      "Never. We automate inside your current stack—HubSpot, Salesforce, ClickUp, Notion, Slack, Stripe, QuickBooks—then plug in AI or Make/n8n where it multiplies ROI.",
+  },
+  {
+    question: "How do you keep projects on budget?",
+    answer:
+      "Every build has fixed scope, fixed price, and clear success metrics. No scope-creep surprises—just milestones tied to outcomes.",
+  },
+  {
+    question: "What if we’ve tried automation before and it failed?",
+    answer:
+      "We diagnose first. Most failures come from automating noise. We target the 20 % of tasks that drive 80% of revenue and prove it with numbers.",
+  },
+  {
+    question: "What happens after launch?",
+    answer:
+      "You own everything—tools, data, and SOPs. We provide Loom hand-offs, dashboards, and optional retainers for ongoing optimization so ROI keeps climbing.",
+  },
+  {
+    question: "Is our data secure?",
+    answer:
+      "Yes. Least-privilege access, GDPR-compliant handling, and credentials stay inside your accounts. Security is built-in, not bolted on.",
+  },
+  {
+    question: "What’s the minimum to get started?",
+    answer:
+      "A 30-minute call. If we can’t identify three measurable wins worth automating, we’ll tell you upfront. If we can, we map them in a 7-day Blueprint Pilot.",
+  },
+];
 
   return (
     <section id="faq" className="relative py-24">

@@ -27,6 +27,14 @@ export default function Header() {
     { label: 'FAQ', href: '#faq' },
   ];
 
+  const openCalendly = () => {
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: 'https://calendly.com/benjamin-tang-scalaryn/30min'
+      });
+    }
+  };
+
   const handleMenuClick = (e, href) => {
     e.preventDefault();
     setIsMobileMenuOpen(false);
@@ -99,7 +107,10 @@ export default function Header() {
           </div>
 
           {/* Get Started Button */}
-          <button className="hidden md:block bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-2 rounded-full hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300">
+          <button 
+            onClick={openCalendly}
+            className="hidden md:block bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-2 rounded-full hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300"
+          >
             Get Started
           </button>
 
@@ -125,7 +136,10 @@ export default function Header() {
                 {item.label}
               </a>
             ))}
-            <button className="w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-2 rounded-full hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300">
+            <button 
+              onClick={openCalendly}
+              className="w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-2 rounded-full hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300"
+            >
               Get Started
             </button>
           </div>

@@ -1,14 +1,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Users, Award, Target, Star } from 'lucide-react';
+import { Cpu, Settings, Rocket, MessagesSquare } from 'lucide-react';
 
 export default function About() {
   const stats = [
-    { icon: Users, value: '50+', label: 'Happy Clients' },
-    { icon: Award, value: '10+', label: 'Years Experience' },
-    { icon: Target, value: '200+', label: 'Projects Delivered' },
-    { icon: Star, value: '4.9', label: 'Trustpilot Rating' },
+    { icon: Cpu, value: '15+', label: 'Years Experience' },
+    { icon: Settings, value: 'Enterprise-Level Expertise', label: 'Microsoft, KPN & more' },
+    { icon: Rocket, value: 'Automation Systems Built', label: 'Marketing, Sales & Ops' },
+    { icon: MessagesSquare, value: 'Ongoing', label: 'Projects for startups & agencies' },
   ];
 
   // Add your image path here, or set to null for default gradient box
@@ -67,18 +67,22 @@ export default function About() {
             </div>
             
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Based in the vibrant heart of{' '}
+              Scalaryn is an AI-powered automation consultancy operating globally from {' '}
               <span className="bg-gradient-to-r from-indigo-400 to-purple-600 bg-clip-text text-transparent">
-                Sydney, Australia
+                the Netherlands
               </span>
             </h2>
             
             <p className="text-gray-300 text-lg mb-6 leading-relaxed">
-              Scalaryn Agency is not just a digital agency; we're your partners in transformation. Our mission is to turn your business vision into reality, one system at a time.
+              We help ambitious businesses replace manual processes with intelligent systems that drive revenue, save time, and simplify growth.
+            </p>
+
+            <p className="text-gray-300 text-lg mb-6 leading-relaxed">
+             Founded by Benjamin Tang, a seasoned software engineer with over 15 years of experience building enterprise systems for brands like Microsoft and KPN, Scalaryn was created to bring that same level of precision and scalability to fast-growing companies.
             </p>
             
             <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-              With a diverse team of strategists, developers, and innovators, we're constantly pushing the boundaries of what's possible in business automation and systems integration.
+              Our mission is simple: make advanced automation accessible to every business that wants to scale smarter, move faster, and grow without adding complexity.
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
