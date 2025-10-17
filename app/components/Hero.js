@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function Hero() {
   // Add your image path here, or set to null for default gradient box
-  const heroImage = null; // Change to '/images/hero-image.jpg' to use an image
+  const heroImage = '/images/hero.webp' ; // Change to '/images/hero-image.jpg' to use an image
 
   const openCalendly = () => {
     if (window.Calendly) {
