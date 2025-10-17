@@ -129,18 +129,24 @@ const faqs = [
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-center mt-16"
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+        className="text-center mt-16"
+      >
+        <p className="text-gray-300 mb-6">Still have questions?</p>
+
+        <a
+          href="mailto:benjamin.tang@scalaryn.com?subject=Question%20about%20Scalaryn%20automations"
+          className="inline-flex items-center justify-center bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-8 py-4 rounded-full hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300 font-semibold"
         >
-          <p className="text-gray-300 mb-6">Still have questions?</p>
-          <button className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-8 py-4 rounded-full hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300">
-            Contact Us
-          </button>
-        </motion.div>
+          Contact Us
+        </a>
+      </motion.div>
+
+
       </div>
     </section>
   );

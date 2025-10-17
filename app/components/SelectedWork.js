@@ -106,6 +106,7 @@ export default function SelectedWork() {
           ))}
         </div>
 
+    {/*
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -117,6 +118,7 @@ export default function SelectedWork() {
             View All Blueprints
           </button>
         </motion.div>
+    */}
       </div>
     </section>
   );

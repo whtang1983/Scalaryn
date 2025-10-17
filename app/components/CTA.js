@@ -76,14 +76,16 @@ export default function CTA() {
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
                 </motion.button>
                 
-                <motion.a
-                  href="/work/salesforce-crm"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="glass text-white px-8 py-4 rounded-full hover:bg-white/10 transition-all duration-300 font-semibold"
-                >
-                  See Blueprint Example
-                </motion.a>
+                {/*
+                  <motion.a
+                    href="/work/salesforce-crm"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="glass text-white px-8 py-4 rounded-full hover:bg-white/10 transition-all duration-300 font-semibold"
+                  >
+                    See Blueprint Example
+                  </motion.a>
+                */}
               </div>
 
               <div className="mt-12 flex flex-wrap justify-center items-center gap-8 text-sm text-gray-400">
