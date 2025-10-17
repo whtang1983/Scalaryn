@@ -7,8 +7,9 @@ import CalendlyBadge from './components/CalendlyBadge';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Scalaryn Agency - Business Systems Solutions',
-  description: 'Transform your business with powerful systems for sales, marketing, project management, and finance.',
+  title: 'Scalaryn – AI-Powered Automation Consultancy for Smarter Growth',
+  description:
+    'Scalaryn helps ambitious businesses replace manual work with AI-powered automations that boost revenue, shorten sales cycles, and scale operations—without adding complexity.',
 };
 
 export default function RootLayout({ children }) {
